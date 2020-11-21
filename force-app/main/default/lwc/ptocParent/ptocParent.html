@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="Parent to child-Parent" icon-name="custom:custom2">
+        <!--
+            //sending string through attribute
+        <div class="slds-p-around_medium">
+            <c-ptoc-child c-name={pName} ></c-ptoc-child>
+        </div>
+
+        //sending hardcord data through attri
+        <div class="slds-p-around_medium">
+            <c-ptoc-child c-name="Suresh"></c-ptoc-child>
+        </div>
+
+        //sending data of list throught attri
+        <div class="slds-p-around_medium">
+            <c-ptoc-child c-persons={pPersons}></c-ptoc-child>
+        </div>
+        -->
+
+         <!--sending data to child method-->
+        <div class="slds-p-around_medium">
+            <lightning-input type="number" variant="brand" name="num1" label="Num1" ></lightning-input>
+            <lightning-input type="number" variant="brand" name="num2" label="Num2" ></lightning-input>
+            <lightning-button label="Add Nums" onclick={handleAdd}></lightning-button>
+            <template if:true={sum}>
+                <p>Result={sum}</p>
+            </template>
+            <c-ptoc-child></c-ptoc-child>
+        </div>
+
+    </lightning-card>
+   
+    
+    
+
+    
+</template>

@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Wired Property Example" icon-name="custom:custom63">
+        <div class="slds-m-top_x-small slds-m-left_x-small slds-m-top_x-small slds-m-right_x-small slds-m-bottom_large">
+            <lightning-input label="Enter a Name"></lightning-input>
+            <!-- <lightning-input label="Test"></lightning-input> -->
+            <lightning-button label="Search" variant="brand" onclick={handleClick} ></lightning-button>
+            <template if:true={wiredActs.data}>
+                Result Count:{getCount}
+                <template for:each={wiredActs.data} for:item="act">
+                    <li key={act.Id}>
+                       Account: {act.Name}:{act.Phone}
+                    </li>  
+                </template>
+            </template>
+            <template if:true={wiredActs.error}>
+                Error: {wiredActs.error}
+            </template>
+       
+        </div>
+    </lightning-card>
+
+</template>

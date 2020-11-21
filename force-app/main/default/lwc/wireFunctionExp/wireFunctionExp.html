@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Wired Function Example" icon-name="custom:custom64">
+        <div class="slds-m-top_x-small slds-m-left_x-small slds-m-top_x-small slds-m-right_x-small slds-m-bottom_large">
+        
+            <template if:true={result}>
+                <template for:each={result} for:item="act">
+                    <li key={act.Id}>
+                       Account: {act.Name}:{act.Phone}
+                    </li>  
+                </template>
+            </template>
+            <template if:true={error}>
+                Error: {error}
+            </template>
+       
+        </div>
+    </lightning-card>
+    <lightning-card title="Imperative Example" icon-name="custom:custom65">
+        <div class="slds-m-top_x-small slds-m-left_x-small slds-m-top_x-small slds-m-right_x-small slds-m-bottom_large">
+            <lightning-button label="Get Contacts" variant="brand" onclick={handleLoad} ></lightning-button> 
+            <template if:true={contacts}>
+                <template for:each={contacts} for:item="cnt">
+                    <li key={cnt.Id}>
+                       Contact: {cnt.Name}:{cnt.Phone}
+                    </li>  
+                </template>
+            </template>
+            <template if:true={contactError}>
+                Error: {contactError}
+            </template>
+       
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,60 @@
+<template>
+    <lightning-card title="For Each" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <ul>
+            <template if:true={persons} for:each={persons} for:item="per">                              
+               <li key={per.ssn}> 
+                   {per.name}::{per.phone}                  
+                </li>           
+            
+            </template>
+            </ul>
+        
+        </div>
+       
+    </lightning-card>
+    <lightning-card title="Iterator" icon-name="standard:account">
+        <div class="slds-m-around_large">
+            <ol>
+                <template if:true={persons} iterator:per={persons}>
+                    <li key={per.value.ssn}>
+                        <div if:true={per.first} class="list-first">#############</div>
+                        
+                        
+                            {per.value.name}:::{per.value.phone}
+                    <div if:true={per.last} class="list-last">@@@@@@@@@@@@@@@</div>
+                    
+                    </li>
+                </template>
+            </ol>
+        </div>
+    </lightning-card>
+
+
+    <lightning-card title="For Each Table data" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <table class="slds-table slds-table_bordered  slds-table_cell-buffer slds-table_striped slds-table_col-bordered ">
+                
+                <tr>
+                    <th><strong>Name</strong></th>
+                    <th><strong>Phone</strong></th>
+                </tr>
+            
+                <template if:true={persons} for:each={persons} for:item="per"> 
+                    <tr  key={per.ssn}>
+                        <td> {per.name}</td>
+                        <td> <lightning-formatted-phone value={per.phone}></lightning-formatted-phone> </td>
+                        
+                    </tr>
+                </template>
+            </table>
+           
+        
+        </div>
+       
+    </lightning-card>
+
+
+
+    
+    </template>

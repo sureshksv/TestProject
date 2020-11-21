@@ -1,0 +1,27 @@
+<template>
+    <template if:true={cName}>
+        <lightning-card title="Parent to child-Child String" icon-name="custom:custom1">
+            <div class="slds-p-around_medium">
+
+                <h1> My full name is {cName}</h1>
+
+            </div>
+        </lightning-card>
+    </template>
+
+    <template if:true={cPersons}>
+        <lightning-card title="Parent to child-Child Array" icon-name="custom:custom4">
+            <div class="slds-p-around_medium">
+                <ul>
+                    <template for:each={cPersons} for:item="per">
+                        <li key={per.ssn}>
+                            {per.name}::{per.phone}
+                        </li>
+
+                    </template>
+                </ul>
+
+            </div>
+        </lightning-card>
+    </template>
+</template>

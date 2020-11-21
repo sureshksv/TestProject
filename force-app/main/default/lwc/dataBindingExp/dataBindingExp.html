@@ -1,0 +1,23 @@
+<template>
+    
+    <lightning-card title="one way binding demo" icon-name="custom:custom1">
+        <div class="slds-p-around_medium">
+            <h1> My full name is {name}</h1>
+        </div>
+    </lightning-card>
+    
+
+    <div class="slds-m-bottom_large">
+    <lightning-card title="Two way binding demo" icon-name="custom:custom2">
+        <div class="slds-p-around_medium">
+            <lightning-input type="text" name="title" label="Enter your title" value={title} onkeyup={changeHandler}></lightning-input>
+            <lightning-input type="text" name="search" label="Enter your search"  onkeyup={changeHandler}></lightning-input>
+
+        </div>
+        <div class="slds-p-around_medium">
+            <h2> My Title is  {title} </h2>
+        </div>
+    </lightning-card>
+    </div>
+    
+</template>

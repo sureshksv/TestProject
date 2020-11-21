@@ -1,0 +1,26 @@
+<template>
+     <lightning-card title="Toast Example" icon-name="custom:custom14">
+         <div class=slds-m-around_medium>
+
+            <template if:false={isLoaded}>
+                <div class="spin">
+                   <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+               </div>
+               </template>
+            <template if:true={isLoaded}>   
+                <template if:true={result}>
+                    <template for:each={result} for:item=res>
+                        <ul key={res.id}>
+                        Account:: {res.Name}: {res.Phone}
+                        </ul>
+                    </template>
+                </template>
+                <template if:true={error}>
+                    Error :{error}
+                </template>
+            </template>
+         </div>
+
+     </lightning-card>
+     
+</template>
