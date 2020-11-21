@@ -3,7 +3,7 @@ import { LightningElement } from 'lwc';
 export default class CtopChild extends LightningElement {
    // inputValue;
     
-   /* handleStringChange(event)
+   /*   handleStringChange(event)
     {
         this.inputValue=event.target.value;
     }*/
