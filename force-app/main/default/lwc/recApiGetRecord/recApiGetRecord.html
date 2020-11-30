@@ -1,0 +1,20 @@
+<template>
+    <lightning-card  variant="Narrow"  title="RecordApi" icon-name="standard:account">
+        <template if:true={wireAccountProp.data}>        
+            <p>
+           <strong>Direct (with out using getFieldValue) :</strong></br>
+                Name: {wireAccountProp.data.fields.Name.value}<br/>
+                Industry: {wireAccountProp.data.fields.Industry.value}</br>
+            </p>
+            <p>
+            <strong>Not Direct (using getFieldValue) :</strong></br>
+                Name: {name}<br/>                                    <!-- calling the get method name here-->
+                Industry: {industry}
+            </p>
+        </template>
+        <template if:true={wireAccountProp.error}>
+            Error: {wireAccountProp.error}
+        </template>
+    </lightning-card>
+   
+</template>

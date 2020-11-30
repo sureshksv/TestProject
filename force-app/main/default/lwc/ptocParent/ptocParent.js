@@ -21,7 +21,7 @@ export default class PtocParent extends LightningElement {
          phone:"9574757777"
         }
     ]
-    handleAdd()
+    handleAdd(evt)
     {       
         var inp=this.template.querySelectorAll("lightning-input");
         let n1 =  inp[0].value;
