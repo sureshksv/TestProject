@@ -7,7 +7,7 @@ import Phone from '@salesforce/schema/Account.phone';
 export default class RecordFormLds extends LightningElement {
     @api recordId;
     @api objectApiName; 
-    //fields=[Type,Industry,Phone];                //this is in record-form
+    //fields=[Type,Industry,Phone];                //this is in record-form fields
 
     handleError()
     {
