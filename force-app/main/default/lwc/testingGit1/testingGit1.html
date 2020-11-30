@@ -1,4 +1,19 @@
 <template>
+    <lightning-card title="Wired Function Example" icon-name="custom:custom64">
+        <div >
+        
+            <template if:true={result}>
+                <template for:each={result} for:item="act">
+                    <li key={act.Id}>
+                       Account: {act.Name}:{act.Phone}
+                    </li>  
+                </template>
+            </template>
+            <template if:true={error}>
+                Error: {error}
+            </template>
+            </div>
+    </lightning-card>
     <lightning-card title="Testing Git" icon-name="standard:account26">
         <div  class="slds-m-around_medium">
     Testing Git Hub </br>
