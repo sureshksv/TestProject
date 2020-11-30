@@ -11,14 +11,14 @@ public with sharing class WiredActsController {
        list<account> acts= [Select id,name,phone from account where name like :n];
        system.debug(acts); 
        return acts;      
-    } 
+    }  
     @AuraEnabled(cacheable=true)
     public static list<contact> getCnts() {
        list<contact> cnts= [Select id,name,phone from contact];
        system.debug(cnts); 
        return cnts;      
     }
-    
+      
     @AuraEnabled(cacheable=true)
     public static list<account> getActsDataTable() {
        list<account> actsDt= [Select id,name,phone,industry from account];
