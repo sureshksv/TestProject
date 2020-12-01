@@ -5,6 +5,7 @@ export default class DataBindingExp extends LightningElement {
     //@track title="Salesforce Developer"
     numObj={'id':'1','description':'one'};
     @track numObjTrack={'id':'1','description':'one'};
+   
     title="";
     changeHandler(event){
         
@@ -28,7 +29,7 @@ export default class DataBindingExp extends LightningElement {
         }
         else if((fldName === 'numberWithTrack'))
         {
-           this.numObjTrack.description=event.target.value; //this does not work..
+           this.numObjTrack.description=event.target.value; //this does work..
           // this.numObj={...this.numObj,'description':event.target.value};
         }
     }

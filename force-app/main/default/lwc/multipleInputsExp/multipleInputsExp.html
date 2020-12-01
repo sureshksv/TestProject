@@ -1,0 +1,65 @@
+<template>
+<!--<lightning-card title="diff onchange Handlers input tag" icon-name="custom:custom22">
+
+    <div class="slds-m-around_medium">
+        <lightning-input type="string" name="name" label="Enter Name" onchange={handleChange}></lightning-input> 
+        <lightning-input type="string" name="age" label="Enter Age" onchange={handleChange2} ></lightning-input> 
+        <lightning-input type="string" name="phone" label="Enter Phone" onchange={handleChange3}></lightning-input> 
+ 
+    </div>
+    Diff::<br/>
+    Name is:{inp1}<br/>
+    Age is:{inp2}<br/>
+    Phone is:{inp3}<br/>
+    
+
+</lightning-card>    
+<lightning-card title="same onchange Handlers input tag" icon-name="custom:custom23">
+
+    <div class="slds-m-around_medium">
+        <lightning-input type="string" name="name" label="Enter Name" onchange={handleChangeSame}></lightning-input> 
+        <lightning-input type="string" name="age" label="Enter Age" onchange={handleChangeSame} ></lightning-input> 
+        <lightning-input type="phone" name="phone" label="Enter Phone" onchange={handleChangeSame}></lightning-input> 
+ 
+    </div>
+    Same::<br/>
+    Name is :{inpname}<br/>
+    Age is :{inpage}<br/>
+    Phone is :{inpphone}<br/>
+
+
+
+</lightning-card>    
+<lightning-card title="without input Handlers and on Button click" icon-name="custom:custom25">
+
+    <div class="slds-m-around_medium">
+        <lightning-input type="string" name="name" label="Enter Name" ></lightning-input> 
+        <lightning-input type="string" name="age" label="Enter Age" ></lightning-input> 
+        <lightning-input type="phone" name="phone" label="Enter Phone" ></lightning-input> 
+        <lightning-button label="Click here" onclick={btnHandler}></lightning-button>
+
+    </div>
+    Button::<br/>
+    Name is :{inpBName}<br/>
+    Age is :{inpBAge}<br/>
+    Phone is :{inpBPhone}<br/>
+
+</lightning-card>-->   
+<lightning-card title="Using class in each input" icon-name="custom:custom26">
+
+    <div class="slds-m-around_medium">
+        <lightning-input type="string" name="name" label="Enter Name" class="cls1" ></lightning-input> 
+        <lightning-input type="string" name="age" label="Enter Age" class="cls2" ></lightning-input> 
+        <lightning-input type="phone" name="phone" label="Enter Phone" class="cls3"></lightning-input> 
+        <lightning-button label="Click here" onclick={btnHandlerClass}></lightning-button>
+
+    </div>
+    Button::
+    Name is :{nameCls} <br/>
+    Age is :{ageCls1}<br>
+    Phone is :{phoneCls}<br> 
+
+</lightning-card> 
+
+    
+</template>
