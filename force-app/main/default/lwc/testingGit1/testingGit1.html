@@ -1,7 +1,8 @@
 <template>
     <lightning-card title="Wired Function Example" icon-name="custom:custom64">
         <div >
-        
+            <lightning-button variant="brand" label="Refresh" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+
             <template if:true={result}>
                 <template for:each={result} for:item="act">
                     <li key={act.Id}>
@@ -12,6 +13,7 @@
             <template if:true={error}>
                 Error: {error}
             </template>
+        
             </div>
     </lightning-card>
     <lightning-card title="Testing Git" icon-name="standard:account26">

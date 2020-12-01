@@ -1,10 +1,18 @@
 import { LightningElement,wire } from 'lwc';
 import getActs from '@salesforce/apex/WiredActsController.getActs'
+import { refreshApex } from '@salesforce/apex';
 
 export default class TestingGit1 extends LightningElement {
     name='SriLakshmi';
     result;
     error;
+
+    handleClick(event)
+    {
+        console.log("hi i am refresh");
+        refreshApex(this.result);
+        
+    }
     
 
     //function call wire
