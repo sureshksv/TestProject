@@ -4,7 +4,7 @@ import { refreshApex } from '@salesforce/apex';
 
 export default class TestingGit1 extends LightningElement {
     name='SriLakshmi';
-    @track result;
+    result;
     error;
 
     handleClick(event)
