@@ -12,10 +12,15 @@
         <div class="slds-p-around_medium">
             <lightning-input type="text" name="title" label="Enter your title" value={title} onkeyup={changeHandler}></lightning-input>
             <lightning-input type="text" name="search" label="Enter your search"  onkeyup={changeHandler}></lightning-input>
-
+            <lightning-input type="text" name="number" label="Enter your Number" value={numObj.description} onkeyup={changeHandler}></lightning-input>
+            <lightning-input type="text" name="numberWithTrack" label="Enter your Number with Track" value={numObjTrack.description} onkeyup={changeHandler}></lightning-input>
         </div>
         <div class="slds-p-around_medium">
-            <h2> My Title is  {title} </h2>
+            <h2> My Title is  {title} </h2></br>
+            <h2> Number:{numObj.id}::{numObj.description} </h2>
+        </br>
+        <h2> Number With Track:{numObjTrack.id}::{numObjTrack.description} </h2>
+            
         </div>
     </lightning-card>
     </div>

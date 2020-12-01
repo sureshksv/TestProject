@@ -1,10 +1,10 @@
-import { LightningElement,wire } from 'lwc';
+import { LightningElement,wire,track } from 'lwc';
 import getActs from '@salesforce/apex/WiredActsController.getActs'
 import { refreshApex } from '@salesforce/apex';
 
 export default class TestingGit1 extends LightningElement {
     name='SriLakshmi';
-    result;
+    @track result;
     error;
 
     handleClick(event)
