@@ -8,7 +8,7 @@
     
 
     <div class="slds-m-bottom_large">
-    <lightning-card title="Two way binding demo" icon-name="custom:custom2">
+    <lightning-card title={titlemsg} icon-name="custom:custom2">
         <div class="slds-p-around_medium">
             <lightning-input type="text" name="title" label="Enter your title" value={title} onkeyup={changeHandler}></lightning-input>
             <lightning-input type="text" name="search" label="Enter your search"  onkeyup={changeHandler}></lightning-input>
@@ -23,6 +23,7 @@
         <h2> Number With Track:{numObjTrack.id}::{numObjTrack.description} </h2>
             
         </div>
+                 Greeting:    {greeting};
     </lightning-card>
     </div>
     

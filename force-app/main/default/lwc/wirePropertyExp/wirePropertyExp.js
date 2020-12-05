@@ -14,12 +14,13 @@ export default class WirePropertyExp extends LightningElement {
 
   //property with parameter by user input
   @wire(getActsByName,{nameToken:'$srchToken'}) wiredActs;
+  //@wire(getActsByName,{nameToken:this.srchToken}) wiredActs; //this is not working
 
-  handleClick(event)
+  handleClick(event)  
   {
     var inp=this.template.querySelector("lightning-input");
     this.srchToken=inp.value;
-    console.log(inp.value);
+    console.log(`inp vaue is ${inp.value}`);
   }
 get getCount()
 {

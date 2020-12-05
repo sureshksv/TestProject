@@ -14,8 +14,9 @@ export default class WireFunctionExp extends LightningElement {
     {
         if(data)
         {
+           
             this.result=data;
-
+           
         }
         else
         {

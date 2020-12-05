@@ -1,0 +1,33 @@
+<template>
+    <!--lightning-card title="Get ListUI functionExample" icon-name="custom:custom65">
+        <div>
+            <template if:true={accountList}>
+                <template for:each={accountList} for:item="act">
+                    <li key={act.fields.Id.value}>
+                        Account: {act.fields.Name.value}::{act.fields.Phone.value}
+                    </li>
+                </template>
+            </template>
+            <template if:true={err}>
+                Error: {err}
+            </template>
+        </div>
+    </lightning-card-->
+
+    <lightning-card title="Get ListUi Property Example" icon-name="custom:custom63">
+        <div>
+            <template if:true={accountListpro.data}>
+               
+                <template for:each={accountListpro.data.records.records} for:item="actp">
+                    <li key={actp.fields.Id.value}>
+                        Account: {actp.fields.Name.value}::{actp.fields.Phone.value}
+                    </li>    
+                </template>
+            </template>
+            <template if:true={accountListpro.error}>
+                Error: {accountListpro.error}
+            </template>
+       
+        </div>
+    </lightning-card>
+</template>

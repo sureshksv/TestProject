@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="uiApi UpdateRecord" icon-name="standard:record">
+        <div class="slds-m-around_medium">
+            <template if:true = {contact.data}>
+                <lightning-input label="Id" disabled value={contact.data.Id}></lightning-input>
+                <lightning-input label="First Name" value={contact.data.FirstName} data-field="FirstName"  class="slds-m-bottom_x-small"></lightning-input>
+                <lightning-input label="Last Name" value={contact.data.LastName} data-field="LastName"  class="slds-m-bottom_x-small"></lightning-input>
+                <lightning-button label="Update Contact" variant="brand" onclick={updateContact}  ></lightning-button>
+            </template>
+            <template if:true={contact.error}>
+                 Error  : {contact.error};
+            </template>
+        </div>
+    </lightning-card>
+</template>
