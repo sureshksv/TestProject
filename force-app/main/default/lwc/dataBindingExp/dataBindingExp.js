@@ -1,10 +1,13 @@
-import { LightningElement,track } from 'lwc';
+import { api, LightningElement,track } from 'lwc';
 
 export default class DataBindingExp extends LightningElement {
-    name="SRILAKSHMI";
+    @api name="SRILAKSHMI";
     //@track title="Salesforce Developer"
     numObj={'id':'1','description':'one'};
     @track numObjTrack={'id':'1','description':'one'};
+
+    @api titlemsg;              //also see in meta xml target configure.
+    @api greeting="Default Greeting";            //these 2 are used for confiqure design properties means it can change dynamically the title and greeting
    
     title="";
     changeHandler(event){
