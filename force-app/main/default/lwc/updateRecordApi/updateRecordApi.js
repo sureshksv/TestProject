@@ -18,7 +18,7 @@ export default class UpdateRecordApi extends LightningElement {
 
    
     updateContact(event) {
-        console.log('i entered update button');
+        console.log('entered update button');
         const fields = {};
 
         fields[ID_FIELD.fieldApiName] = this.contact.data.Id;                   
