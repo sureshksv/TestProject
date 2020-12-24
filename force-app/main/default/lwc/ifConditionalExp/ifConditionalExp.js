@@ -15,7 +15,7 @@ export default class IfConditionalExp extends LightningElement {
         this.btnLbl="Hide"; 
       }
       else{
-        //btnlabel  hide
+        //btnlabel to  hide
         //this.show=false;      
         this.btnLbl="Show Data";
       }
