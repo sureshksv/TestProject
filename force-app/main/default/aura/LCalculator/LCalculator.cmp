@@ -1,0 +1,43 @@
+<aura:component controller="LCalcApexController">
+   
+    <aura:attribute name="fnumAtt" type="decimal"/>
+     <aura:attribute name="snumAtt" type="decimal"/>
+     <aura:attribute name="resultAtt" type="decimal"/>
+
+    <div>
+        <div>
+            Calculator Example <br/>
+        
+        </div>
+        <div>
+            <ui:inputNumber label="First Number" aura:id="fnum" value="{!v.fnumAtt}" />    
+            <!-- <ui:inputNumber label="First Number" aura:id="fnum" />    parameters -->
+        </div> 
+        <br/>
+        
+        <div>
+            <ui:inputNumber label="Second Number" aura:id="snum" value="{!v.snumAtt}" />       
+             <!--<ui:inputNumber label="Second Number" aura:id="snum"  />-->        
+        </div> 
+        <br/>
+        
+        <div>
+			<ui:inputNumber label="Result" aura:id="result" value="{!v.resultAtt}"/> 
+             <!--<ui:inputNumber label="Result" aura:id="result" />-->
+
+        </div> 
+        <br/>
+        
+         <div>
+           <!-- <ui:button label="clickme" press="{!c.calculateWithParameters}" class="button"/>-->     
+            <!-- <ui:button label="clickme" press="{!c.calculateWithAttributes}" class="button"/>   -->
+             
+             <ui:button label="clickme" press="{!c.calculateWithApexContrl}" class="button"/> 
+        </div> 
+        <br/>
+        
+        
+        
+    </div>
+	
+</aura:component>

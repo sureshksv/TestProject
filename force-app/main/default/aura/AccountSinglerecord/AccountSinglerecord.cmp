@@ -1,0 +1,19 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global" 
+                controller="AccountsingleContro">
+  
+    <aura:attribute name="acc" type="Account"/> 
+	<aura:handler name="init" value="{!this}" action="{!c.retrieveSingleAcc}"/>    <!-- to store data init from js method -->
+    Single Record Output: {!v.acc.Name}<br/>
+    
+    <lightning:card footer="{!v.acc.Website}" title="{!v.acc.Name}">
+        <aura:set attribute="actions">
+    <lightning:button variant="success" label="Edit" title="Edit" onclick="{!c.editRecord}"/>
+        </aura:set>
+        <p class="slds-p-horizontal_small">
+          Industry:  {!v.acc.Industry}<br/>
+          Type:   {!v.acc.Type}<br/>
+          Phone:   {!v.acc.Phone}<br/>
+
+        </p>
+    </lightning:card>
+</aura:component>

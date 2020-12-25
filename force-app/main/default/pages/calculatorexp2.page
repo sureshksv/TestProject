@@ -1,0 +1,36 @@
+<apex:page controller="calculatorclasscont2" >
+    
+    <apex:form >
+        <apex:pageblock title="calaculator">
+           <apex:pageMessages id="show" ></apex:pageMessages> 
+            enter aval:<apex:inputtext id="aval" value="{!aval}"/><br/>
+            enter bval:<apex:inputtext id="bval" value="{!bval}"/><br/>
+            result    :<apex:outputtext id="res" value="{!result}"/><br/>
+            
+            
+
+            
+            <apex:selectlist size="1" value="{!selectone}">
+                <apex:selectoption itemlabel="Select operation" itemvalue="none"/>
+                 <apex:selectoption itemlabel="Addition" itemvalue="add"/>
+                  <apex:selectoption itemlabel="Subtraction" itemvalue="sub"/>
+                <apex:selectoption itemlabel=" Multiplication" itemvalue="multi"/>
+                <apex:selectoption itemlabel="Division" itemvalue="div"/>
+                
+                <apex:actionsupport event="onchange" rerender="aval,bval,res,show" action="{!performoperation}"/>
+               
+               
+                </apex:selectlist>
+                <apex:commandButton value="reset" reRender="aval,bval,res" action="{!reset}"/>
+                
+                
+                <!-- <apex:commandButton value="submit" action="{!submit}" rerender="one"/> -->
+               <!-- <apex:commandButton value="reset"  action="{!reset}"/> -->
+            
+            
+                                           
+     </apex:pageblock>
+        
+        
+    </apex:form>
+</apex:page>

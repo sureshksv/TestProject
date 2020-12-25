@@ -1,0 +1,20 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    <br/>
+    I AM CHILD
+    <!--aura:attribute name="message" type="String"/-->
+    
+    <!--  <aura:method name="sayHi" action="{!c.Hello}"/>-->
+    
+    <aura:method name="addNum" action="{!c.AddNumbers}">
+        <aura:attribute name="number1c" type="Number"/>
+        <aura:attribute name="number2d" type="Number"/>
+    </aura:method>
+    
+</aura:component>
+
+
+
+<!-- this auramethod means now i am exposing this method so my parentcmp can use it -->
+<!-- IN BETWEEN ATTRIBUTES OF AURAMETHOD MEANS these are parameters in method-->
+<!-- we have data in parent so we have to write auramethod in child and using this method we can call in parent --> 
+<!-- means this is parent to child (downwards)-->

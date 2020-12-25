@@ -1,0 +1,8 @@
+<aura:component>
+    
+ 
+   <c:AuraFacet11>
+    <lightning:button variant="base" label="AddInputElement" title="title" onclick="{!c.addElement}"/>
+    Hello<div>I am here</div>
+</c:AuraFacet11>
+</aura:component>

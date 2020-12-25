@@ -1,0 +1,9 @@
+<aura:component access="global" implements="flexipage:availableForAllPageTypes" >
+    <br/>
+    <aura:registerEvent name="Cmp1ToCmp2Event" type="c:Cmp1ToCmp2Event"/>
+    <div class="slds-form-element">
+	<lightning:input name="cmp1Txt" aura:id="cmp1TxtId" label="Cmp1TxtLbl"/>
+    <lightning:button variant="brand" label="Done" title="" onclick="{! c.handleClick }" />
+    </div>
+    
+</aura:component>

@@ -1,0 +1,5 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+    <force:recordEdit aura:id="edit" recordId="{!v.recordId}"/>
+	<lightning:button label="Save" onclick="{!c.save}"/>
+						
+</aura:component>

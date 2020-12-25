@@ -1,0 +1,42 @@
+<apex:page controller="Calculatorcontr">
+<script type="text/javascript">
+function callContr(){
+    alert("u r there");
+    /*
+Calculatorcontr.redirectFromJS(
+function(result,event){
+    if(event.status)
+        {
+            alert(result.target);
+            
+            }
+    }
+
+);
+*/
+    window.open("/apex/Calculator");
+    //window.open("/apex/Calculator","_self");
+    window.location.href="/apex/Calculator";
+}
+    
+    
+function test()
+{
+var inp=document.getElementById("{!$Component.form1.num1}").value;
+    //alert("u r in"+inp);
+    callContr();
+}
+
+    
+
+</script>
+
+
+    <apex:form id="form1"> Welcome page
+        Enter Number1: <apex:inputtext id="num1" />
+    <!--<apex:commandButton action="{!redirect}" onclick="test()" value="GO"/> -->
+        
+       <apex:commandButton onclick="test()" value="GO"/>
+    </apex:form>
+    
+</apex:page>

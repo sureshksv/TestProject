@@ -1,0 +1,14 @@
+<apex:page controller="addnumberscontroller">
+    <apex:form >
+        <apex:pageblock title="Input Example">
+        Enter aval :<apex:inputText value="{!aval}" /><br/>
+        Enter bval :<apex:inputText value="{!bval}" /><br/>
+        Result cval :<apex:inputText value="{!cval}"/><br/>
+        <apex:commandButton value="submit" action="{!submit}" />
+                <apex:commandButton value="reset" action="{!reset}" />
+            </apex:pageblock>
+
+        
+    </apex:form>
+    
+</apex:page>

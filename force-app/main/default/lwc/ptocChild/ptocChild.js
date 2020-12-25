@@ -10,18 +10,3 @@ export default class PtocChild extends LightningElement {
         return parseInt(i1)+parseInt(i2);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

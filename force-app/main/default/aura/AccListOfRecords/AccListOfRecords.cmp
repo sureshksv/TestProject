@@ -1,0 +1,39 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" 
+                controller="AccListOfRecordsApexCont" >
+    <aura:attribute name="accts" type="List"/>                                           <!-- storeing data in here-->
+    <aura:handler name="init" value="{!this}" action="{!c.fetchAllAccounts}"/>           <!-- onload page  -->
+    
+    <aura:attribute name="displayOptions" type="List" default="[
+                                                               {'label': 'Cards', 'value': 'Cards'},
+                                                               {'label': 'Table', 'value': 'Table'}
+                                                               ]"/>
+    <aura:attribute name="selectedDisplayOption" type="String" default="Cards"/>
+    
+    <lightning:radioGroup name="radioButtonGroup"
+                          label="Select a Layout"
+                          options="{!v.displayOptions}"
+                          value="{!v.selectedDisplayOption}"
+                          type="button"
+                          required="true"
+                          onchange="{!c.handleChange}"/>                          <!-- handle change-->
+    <br/>
+    
+    <aura:if isTrue="{!v.selectedDisplayOption == 'Cards'}">
+            <c:AccountCards accts="{!v.accts}"/>                 <!--data transfering through attributes from comp to comp-->
+        <aura:set attribute="else">
+            <c:AccountTable accts="{!v.accts}"/>
+        </aura:set>
+    </aura:if>
+    
+    
+</aura:component> 
+
+
+
+<!-- salesforce lightening component library in it layoutitem init size specified to all devices-->
+<!-- to call from parent to child(means downwards) component we will use attribute of child to get data --> 
+<!-- to call from child to parent comp it will be bubble type-->
+<!-- accountsinglerecord is another comp --> 
+<!-- multiplerows if it is false then it shows all in one row so hve to give true -->
+<!-- send accts attriute from accountlistofrecords to accts attribute of accountcards  -->
+<!--   there is no else in if in aura so we have to handle with in iF-->

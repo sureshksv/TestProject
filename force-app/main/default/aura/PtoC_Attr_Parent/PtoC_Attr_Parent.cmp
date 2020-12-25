@@ -1,0 +1,16 @@
+<aura:component>
+<aura:attribute name="pVal" type="String" default="Enter"/>
+<aura:handler name='change' value="{!v.pVal}" action="{!c.doInformParent}"/>
+
+
+<div class="slds-p-around_medium">
+<lightning:input name="pInp" label="Text field " value="{!v.pVal}"/>
+<lightning:button variant="brand" label="Enter" title="title" onclick="{!c.enterAttr }"/>
+</div>
+<br/>
+    <c:PtoC_Attr_Child1 c1Val="{!v.pVal}" />                   <!--calling child cmp and giving parent att value to child att value -->
+<br/>
+
+<c:PtoC_Attr_Child1 c1Val="{#v.pVal}" />         <!-- ! is it can change values and # is once it assign it is fixed (check it) -->
+<br/>
+</aura:component>

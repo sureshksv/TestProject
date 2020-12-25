@@ -1,0 +1,7 @@
+<aura:component implements="force:appHostable,lightning:isUrlAddressable" access="global">
+    <aura:attribute name="name1" type="String" />
+    <aura:attribute name="address1" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />	
+    Lightning Component received Account Name - {!v.name1}  -- - {!v.address1}  
+    <!-- https://legpad-dev-ed.lightning.force.com/lightning/cmp/c__PageNavi1_Urlparams?c__accountName=Suresh -->
+</aura:component>

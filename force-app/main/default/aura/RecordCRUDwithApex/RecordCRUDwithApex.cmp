@@ -1,0 +1,12 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global" >
+	<!--force:recordView recordId="0012E00001qCce8QAC" /-->
+    
+    <aura:attribute name="saveState" type="String" default="UNSAVED" />
+    <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.handleSaveSuccess}"/>
+    
+    <force:recordEdit aura:id="edit" recordId="0012E00001qCce5QAC"/>
+    <lightning:button label="Save" onclick="{!c.save}"/>
+    
+    Record save status: {!v.saveState}
+    
+</aura:component>

@@ -25,7 +25,7 @@ export default class WireFunctionExp extends LightningElement {
     }
     
 
-    //wire Imperative way ,we will not use @wire in imperative way
+    //wire Imperative way ,we will not use wire in imperative way
     handleLoad(){
         getCnts()                 //this is alias of apex method calling
         .then(resultcnts=>              //this is function with arrow with promises called (.then and .catch)
@@ -40,10 +40,8 @@ export default class WireFunctionExp extends LightningElement {
     }
 
    /* //wire Imperative way ,with passing parameters example.
-   fname;                                                 //these are track variables given from inputs
-   lname;                                                  //see in wire property example    
     handleLoad(){
-        getCnts({firstNumber:'$fName',lastNumber:'$lName'})           //this is alias of apex method calling
+        getCnts({firstNumber:this.fName,lastNumber:this.lName})           //this is alias of apex method calling
         .then(resultcnts=>           //example if sending parameters to apex method   
             {
             this.contacts = resultcnts;

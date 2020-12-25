@@ -1,0 +1,17 @@
+<aura:component >
+    
+    <!--PARENT comp -->
+    <aura:attribute name="totalIncome" type="decimal" default="0"/>
+    <aura:handler name="LightningEventsComp1Event" event="c:LightningEventsComp1Event" action="{!c.handleTotalIncomeComponentEvent}"/>
+    <div class="Inner Component"> 
+        Inner Component Section Begins
+        <c:LightningEventsComp1/>
+        Outer Component Section Ends
+    </div>
+    <span class="totalIncome">Total Income is : {!v.totalIncome}</span>  
+  
+</aura:component>
+
+  <!--  both span and div are used for same ,usally span is used for single line and div for group of lines-->
+    <!-- this is parent comp and we are calling child comp here -->
+<!-- we have registered event in child comp and sending it to parent comp so event is used-->

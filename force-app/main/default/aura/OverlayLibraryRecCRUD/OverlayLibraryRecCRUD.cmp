@@ -1,0 +1,4 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <lightning:overlayLibrary aura:id="overlayLib"/>                      <!-- this is built in cmp-->
+	<lightning:button label="Edit" onclick="{!c.editModal}"/>
+</aura:component>

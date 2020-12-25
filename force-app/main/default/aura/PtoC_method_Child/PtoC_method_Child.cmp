@@ -1,0 +1,11 @@
+<aura:component>
+    <aura:attribute name="Value1" type="String"/>
+    <!--aura:attribute name="Value2" type="String"/-->
+
+<aura:method name="cAddStrings" action="{!c.doAddString}" access="public">
+    <aura:attribute name="cString1" type="String"/>
+    <aura:attribute name="cString2" type="String" />                   <!-- this ***two att in between method are parameters to pass -->   
+
+</aura:method>
+The String is combined : {!v.Value1} 
+</aura:component>

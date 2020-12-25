@@ -1,0 +1,11 @@
+<apex:page standardController="account">
+    <apex:outputLabel value="username"/><br/><br/>
+    
+    <apex:outputLabel >Password</apex:outputLabel><br/><br/>
+    
+    <apex:outputlabel value="{!account.name}"/><br/><br/>
+    <apex:outputText value="{!account.name}"/><br/><br/>
+    <apex:outputfield value="{!account.name}"/>
+    
+   
+</apex:page>

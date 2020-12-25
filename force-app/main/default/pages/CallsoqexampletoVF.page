@@ -1,0 +1,15 @@
+<apex:page controller="callVFsoqlexample" >
+    <apex:pageblock title="my Soql">
+    <apex:pageBlockTable value="{!acclist}" var="item">
+        <apex:column >
+         <apex:facet name="header">Acc Names:</apex:facet>   
+        <apex:outputtext value="{!item.name}"/>
+        </apex:column>
+        <apex:column >
+          <apex:facet name="header">Acc phone:</apex:facet>  
+        <apex:outputtext value="{!item.phone}"/>
+        </apex:column> 
+        
+     </apex:pageBlockTable>
+     </apex:pageblock>
+</apex:page>

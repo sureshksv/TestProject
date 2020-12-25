@@ -1,0 +1,19 @@
+<aura:component >
+	    <aura:attribute name="accts" type="List" required="true" default=""/> 
+    	    <aura:attribute name="columns" type="List" default="[
+                                                              {label:'Name', fieldName:'Name', type:'text'},
+                                                              {label:'Website', fieldName:'Website', type:'text'},
+                                                              {label:'Type', fieldName:'Type' ,type:'text'},
+                                                              {label:'Industry', fieldName:'Industry', type:'text'},
+                                                              {label:'Phone', fieldName:'Phone', type:'text'},
+
+                                                              ]"/> 
+
+    
+    <lightning:datatable
+                keyField="id"
+                data="{!v.accts}"
+                columns="{!v.columns}"
+                hideCheckboxColumn="true"/>
+
+</aura:component>

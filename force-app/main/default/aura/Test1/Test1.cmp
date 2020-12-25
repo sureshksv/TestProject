@@ -1,0 +1,3 @@
+<aura:component >
+	<div> Different component</div>
+</aura:component>

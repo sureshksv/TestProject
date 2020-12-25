@@ -1,0 +1,61 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId,force:hasSObjectName"
+                access="global" controller="AccountApexController" >
+
+   
+    <aura:attribute name="record" type="Account"/> 
+    <aura:handler name="init" value="{!this}" action="{!c.fetchAccountInfo}"/> 
+    
+   
+    <!-- when the page is loading on browser then we have to write -->
+    <!--  RecordId: {!v.recordId}<br/>
+    SobjectName: {!v.sObjectName}<br/>
+    You are all set forever
+    
+    {!v.record.Name}<br/>
+    {!v.record.Website}<br/>      after styling no need to write here all these  -->
+    
+    
+     <lightning:card footer="{!v.record.Website}" title="{!v.record.Name}">
+        <aura:set attribute="actions">
+          <!--  <lightning:button label="New"/>  -->
+        <lightning:button variant="success" label="Edit" title="Edit" onclick="{! c.editRecord }"/>
+
+        </aura:set> 
+         
+      <p class="slds-p-horizontal_small">
+         Type: {!v.record.Type}<br/>
+         Industry: {!v.record.Industry}<br/>
+          Phone: {!v.record.Phone}
+        </p>
+    </lightning:card>
+    </aura:component>
+
+     <!-- <aura:attribute name="recordId" type="String" default="0012E00001qCce5QAC"/> -->
+    <!-- this line note neceessary when wrote hasrecordid and default is to show on browser-->
+        
+    
+    <!--this line is not needed if we write force:hasRecordId and if this is written the LC will know the 
+        record's id in context i.e. we can directly write {!v.recordId} ,it is ok if we dont write the attribute if
+        we write the force:hasRecordId .-->
+   <!-- v. is for attributes and c. is for methods --> 
+   <!-- force:hasSObjectName is written then we have object API name -->
+    
+       <!-- this is attribute which we assign in class datatype and variable(like that) here name is variable and type 
+        is datatype.  -->
+    <!-- when we spciefy this interface force:hasSObjectName u have the object api name from object-->
+    <!--this would get id of account in contest and make a server call get
+        other account details and display some what nicely on UI and put a 
+        button which will pop open the selected account details -->
+     <!--as we noted the js method is not invoked here as we create a button to be shown as soon as the page 
+         loads so for such situation there is a system event called "init" which fires on component load to intialize 
+          the attr ,value=this means the component were it is written action apex method . v. is for attri and c. for
+          methods.   -->
+    <!-- lightening is case sensitive-->
+    <!-- DECORATING (STYLING) of ui page using lightening component library -lightening:card -select all the code 
+        in it and paste in component and change the details-->
+
+     <!-- instead of NEW button here go to lightning component library -go to lightening:button -select SUCCESS code 
+          and copy and paste in component instaed of NEW button -->
+
+
+    <!-- editRecord method has to be in js controller-->

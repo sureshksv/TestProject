@@ -1,0 +1,9 @@
+<aura:component>
+    <form>
+    <lightning:input label="Enter" name="enterName" aura:id="enterId" minlength="5" maxlength="7" fieldLevelHelp="Takes Min 5 chars and max 7"
+                     messageWhenTooShort="Your entry must be at least 5 characters." required="true" />
+    <lightning:input type="email" label="EnterEmail" name="enterEmail" aura:id="enterEmailId" required="true"/>
+    
+    <lightning:button label="Register" onclick="{! c.registerNoCheck }" />
+        </form>	
+</aura:component>

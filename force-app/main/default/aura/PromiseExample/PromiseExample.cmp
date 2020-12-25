@@ -1,0 +1,5 @@
+<aura:component >
+    <aura:attribute name="display" type="String"/>
+        <lightning:button variant="success" label="GetData"  onclick="{!c.getDataWithPromiseFull}"/>
+    Data:{!v.display}
+</aura:component>

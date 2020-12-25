@@ -1,0 +1,8 @@
+<aura:component access="global" implements="flexipage:availableForAllPageTypes" >
+    <br/>
+       <aura:handler  event="c:Cmp1ToCmp2Event" action="{!c.handleDatacopy}"/>         <!-- this is application so name is not here  -->
+    <div class="slds-form-element">
+	<lightning:input name="cmp2Txt" aura:id="cmp2TxtId" label="Cmp2TxtLbl"  maxlength="10"  />
+    </div>
+    
+</aura:component>
