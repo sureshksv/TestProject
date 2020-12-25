@@ -1,0 +1,13 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <aura:attribute name="pageReference" type="Object"/>                     <!--we can give any name,object is key:value pair-->
+  
+    <aura:handler name="init" value="{! this }" action="{! c.initNew }"/>
+    
+    <lightning:button label="Navigate" onclick="{!c.handleClick}"/>
+    
+    <lightning:navigation aura:id="navService"/>                            <!-- it is a component by salesforce -->
+</aura:component>
+
+
+<!-- this works in one.app -->
+<!-- same example see PageNav1_source -->

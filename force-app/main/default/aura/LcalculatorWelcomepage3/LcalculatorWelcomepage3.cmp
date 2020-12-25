@@ -1,0 +1,13 @@
+<aura:component >
+	<!--<aura:attribute name="Lcalculatorpage" type="decimal"/> -->
+    <div>
+        <div>
+             Welcome to Calculator Example <br/>
+        
+        </div>
+        <div>
+           
+             <ui:button label="clickme" press="{!c.navigateToLcalculator}" class="button"/> 
+        </div> 
+    </div>
+</aura:component>

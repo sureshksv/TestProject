@@ -1,0 +1,30 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+	<aura:attribute name="recordId" type="String" default="0032E00002RzTpdQAF"/>
+    <aura:attribute name="contactRecordFields" type="Object"/>
+    <aura:attribute name="contactRecordLayout" type="Object"/>  
+    <aura:attribute name="recordError" type="String"/>
+    <aura:handler name="change" value="{!v.contactRecordFields}" action="{!c.handleAttrUpdate}"/>
+    <force:recordData aura:id="recordLoader"
+                      recordId="{!v.recordId}"
+                      targetFields="{!v.contactRecordFields}"
+                      targetRecord="{!v.contactRecordLayout}"
+                      targetError="{!v.recordError}"                       
+                      layoutType="FULL"    
+                      mode="VIEW"
+                      recordUpdated="{!c.recordUpdate}"
+                      />
+    
+    <!-- only View Recorddata-->
+    
+     <lightning:card iconName="standard:contact" aura:id="ViewForm" title="{!v.contactRecordFields.Name}" >
+        <div class="slds-p-horizontal--small">
+            <p class="slds-text-heading--small" >
+                <lightning:formattedText title="LastName" value="{!v.contactRecordFields.LastName}" /></p>
+            <p class="slds-text-heading--small" >
+                <lightning:formattedEmail title="Email" value="{!v.contactRecordFields.Email}" /></p>
+            <p class="slds-text-heading--small">
+                <lightning:formattedPhone title="Phone" value="{!v.contactRecordFields.Phone}" /></p>
+             
+        </div>
+    </lightning:card>
+</aura:component>

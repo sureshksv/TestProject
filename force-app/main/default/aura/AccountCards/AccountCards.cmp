@@ -1,0 +1,12 @@
+<aura:component >
+    
+    <aura:attribute name="accts" type="List" required="true" default=""/>   
+    
+	 <lightning:layout multipleRows="true">
+        <aura:iteration items="{!v.accts}" var="accts">
+            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="3" largeDeviceSize="3" padding="around-small">
+                <c:AccountSinglerecord acc= "{!accts}" />           <!-- calling a comp here ..accts in red is var not att and passing data through attribute-->       
+            </lightning:layoutItem>                                <!-- getting the att acc from accsingle record  -->
+        </aura:iteration>                 
+    </lightning:layout>
+</aura:component>

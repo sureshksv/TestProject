@@ -1,0 +1,34 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" 
+                controller="ContactListController" >
+	
+   <!-- <aura:attribute name="recordId" type="String" default="0012E00001qCce5QAC" /> -->
+    <aura:attribute name="contacts" type="List" />
+    
+    <aura:handler  name="init" value="{!this}" action="{!c.getContactsForAccount}"/>
+    Contacts:{!v.contacts.length}
+    
+<lightning:layout horizontalAlign="start" verticalAlign="start" multipleRows="true" pullToBoundary="small">
+   
+
+
+    <aura:iteration items="{!v.contacts}" var="cnt">
+        <lightning:layoutItem padding="horizontal-small" size="12" smallDeviceSize="6" mediumDeviceSize="4" largeDeviceSize="3" flexibility="auto">
+        <lightning:card title="{!cnt.AccountId}" footer="{!cnt.Email}">
+           
+        <aura:set attribute="actions">
+                <lightning:button label="Edit" variant="Brand"/>
+            </aura:set>
+            
+            <p class="slds-p-horizontal_small">
+                {!cnt.LastName}
+            </p>
+        </lightning:card>
+        
+    </lightning:layoutItem>   
+    </aura:iteration>
+
+</lightning:layout>
+
+   
+
+</aura:component>

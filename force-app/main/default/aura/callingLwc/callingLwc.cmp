@@ -1,0 +1,5 @@
+<aura:component >
+    <aura:attribute type='string' name='dataLwc'/>
+    <c:ctopChild onpassingnameevent="{!c.handleChildData}" /> 
+   {!v.dataLwc}
+</aura:component>

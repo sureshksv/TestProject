@@ -1,0 +1,11 @@
+<aura:component>
+
+     <aura:attribute name="c1Val" type="String" />
+    <aura:handler name='change' value="{!v.c1Val}" action="{!c.doInform}"/>         <!--change handler-->
+
+    <div class="slds-p-around_medium">
+          <lightning:input name="c1Inp" label="Text field " value="{!v.c1Val}"/> 
+
+           <lightning:button variant="brand" label="Enter" title="title" onclick="{!c.c1EnterAttr }"/>
+    </div>
+</aura:component>

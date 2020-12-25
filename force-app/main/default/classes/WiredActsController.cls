@@ -27,4 +27,3 @@ public with sharing class WiredActsController {
     }
 
 }
-   

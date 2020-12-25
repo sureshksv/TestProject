@@ -1,0 +1,14 @@
+<aura:component>
+    <aura:attribute name="pString1" type="String"/>
+    <aura:attribute name="pString2" type="String"/>
+    
+    <lightning:input name="name1" label="Enter Name1 here" value="{!v.pString1}" />
+    <lightning:input name="name2" label="Enter Name2 here"  value="{!v.pString2}" />
+    <lightning:button variant="brand" label="Click here" title="title" onclick="{!c.addString}"/>
+    <br/>
+    Name1 :{!v.pString1}<br/>
+    Name2 :{!v.pString2}<br/>
+
+    <c:PtoC_method_Child aura:id="childComp"/>            //calling the child cmp here and gave id to call in js
+
+</aura:component>

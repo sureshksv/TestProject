@@ -1,0 +1,21 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" controller="SfdcPart1Apex" >
+   
+    <aura:attribute name="recordId" type="string" default="0012E00001qCce9QAC" />
+    <aura:attribute name="fields" type="string[]" default="['Name','AnnualRevenue','Industry']"/>
+    <aura:attribute name="contactIds" type="list"/>
+    
+     <aura:handler name='init' value='{!this}' action='{!c.getContactIds}' />
+    
+    <aura:iteration items="{!v.contactIds}" var="contactId">
+     <lightning:card footer="footer" title="{!contactId}">    
+    <lightning:recordForm 
+                          aura:id="myRecordForm" 
+                          recordId="{!contactId}"  
+                          objectApiName="Contact"
+                          layoutType="Compact"
+                          columns="3"
+                          mode="Edit"
+                          onSubmit="{!c.handleSubmit}"/>
+        </lightning:card>
+    </aura:iteration>
+</aura:component>

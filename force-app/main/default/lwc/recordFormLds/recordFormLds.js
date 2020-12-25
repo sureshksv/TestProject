@@ -1,7 +1,7 @@
 import { LightningElement,api } from 'lwc';
-import Type from '@salesforce/schema/Account.type';
-import Industry from '@salesforce/schema/Account.industry';       //this is for record form and not for recordview/edit form
-import Phone from '@salesforce/schema/Account.phone';
+import Type from '@salesforce/schema/Account.Type';
+import Industry from '@salesforce/schema/Account.Industry';       //this is for record form and not for recordview/edit form
+import Phone from '@salesforce/schema/Account.Phone';
 
 
 export default class RecordFormLds extends LightningElement {

@@ -1,0 +1,35 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" >
+	 <div aura:id="editForm" class="slds-p-bottom_large slds-p-left_large slds-hide" style="width:500px">
+        <lightning:recordEditForm aura:id="recordEditForm"
+                                     recordId="0032E00002RzTpdQAF"
+                                     objectApiName="Contact" 
+                                     density="compact" 
+                                     onsuccess="{!c.handleSuccess}"
+                                     onload="{!c.handleLoad}"
+                                     onerror="{!c.handleError}"
+                                     onsubmit="{!c.handleSubmit}">
+            <lightning:messages />
+           
+            <lightning:inputField class="slds-form-element_5-col" fieldName="FirstName" />
+            <lightning:inputField class="slds-form-element_5-col" fieldName="LastName" />
+            <lightning:inputField class="slds-form-element_1-col" fieldName="Birthdate" />
+            <lightning:inputField class="slds-form-element_1-col" fieldName="Phone" />
+            <!--Picklist-->
+            <lightning:inputField fieldName="LeadSource" />
+            <lightning:button aura:id="updateBtn" type="submit"  label="Update" />
+             
+            </lightning:recordEditForm>
+            </div>
+    <!-- Record Display -->
+    <div aura:id="viewForm" class="slds-p-bottom_large slds-p-left_large" style="width:500px">
+        <lightning:recordViewForm recordId="0032E00002RzTpdQAF" density="compact"  objectApiName="Contact">
+        <div class="slds-box">
+            <lightning:outputField class="slds-form-element_5-col" fieldName="Name" />
+            <lightning:outputField class="slds-form-element_2-col" fieldName="Birthdate" />
+            <lightning:outputField class="slds-form-element_2-col" fieldName="Phone" />
+            <lightning:outputField class="slds-form-element_2-col" fieldName="LeadSource" />
+            <lightning:button aura:id="editBtn"  label="Edit"  onclick="{!c.handleEdit}" />
+        </div>
+    </lightning:recordViewForm>
+    </div>
+</aura:component>

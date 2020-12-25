@@ -1,0 +1,18 @@
+<apex:page sidebar="false" controller="Sample1" >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your  Page: page1
+  <!-- End Default Content REMOVE THIS -->
+  <apex:sectionHeader title="Section1" rendered="true"  help="http://www.google.com" printUrl="/apex/page1">   
+ 
+          
+      <apex:form rendered="true">
+          This is in the form <br/>
+          {!test}<br/>
+          <apex:commandButton value="Button" action="{!apply}"/>
+          <br/>
+          {!test1}
+      </apex:form>
+  </apex:sectionHeader>
+  
+</apex:page>

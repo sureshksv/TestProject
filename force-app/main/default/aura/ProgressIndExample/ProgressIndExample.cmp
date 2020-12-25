@@ -1,0 +1,46 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" controller="ProgressIndApex">
+	  <aura:attribute name="steps" type="List"/>
+    <aura:attribute name="stepsNew" type="List"/>
+    <aura:attribute name="recordId" type="String" default="0062E00001DyEznQAF" />
+    <aura:attribute name="oppRecord" type="Object"/>
+    <aura:attribute name="recordLoadError" type="String"/>
+    
+
+    <!--handlers-->
+    <aura:handler name="init" value="{!this }" action="{!c.handleInitApex}"/>
+         <lightning:progressIndicator currentStep="{!v.oppRecord.StageName}" type="path" 
+                                      variant="base" class="slds-readonly-path" >  
+   
+ <!-- readonly we have to write css   -->                        
+<!-- here currentstep will show where the indicator should show,stage name is picklist in oppurtunity so opprecord is attribute stored-->             
+           
+        
+        <aura:iteration items="{!v.stepsNew}" var="step">
+           <lightning:progressStep label="{!step.lbl}" value="{!step.stage}" onstepmouseenter="{!c.handleMouseEnter}"/>            
+        </aura:iteration>
+        
+    </lightning:progressIndicator>
+   
+   <!-- attirbute from recordData **,id is given of oppurtunity, only 2 field are getting  -->
+    
+    <force:recordData aura:id="recordLoader"          
+    recordId="{!v.recordId}"
+    fields="Name,StageName"
+    targetFields="{!v.oppRecord}"
+    targetError="{!v.recordLoadError}"
+    />
+    <div> 
+        <lightning:card iconName="standard:account" title="{!v.oppRecord.Name}" >
+            <div class="slds-p-horizontal--small">
+                
+                <p class="slds-truncate"><lightning:formattedText title="Name" value="{!v.oppRecord.Name}" /></p>
+                <p class="slds-truncate"> <lightning:formattedText title="StageName" value="{!v.oppRecord.StageName}" /></p>
+            </div>
+        </lightning:card>
+    </div>
+
+</aura:component>
+<!-- progressindicator - in iteration we are using progrees step (only once )because it is iteration-->
+<!-- oterwise how many we want we will use that many progress step-->
+<!-- record data is used because we are using fields and text fields are used here but not in recordform-->
+<!--In Apex controller we wrote how to gey PICKlist data from SCHEMA builder and show it in ui-->

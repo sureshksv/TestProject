@@ -1,0 +1,19 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+    <!--aura:attribute type="Decimal" name="sumValue"/-->
+    <aura:attribute type="Integer" name="resultMessage"/>
+    <aura:attribute type="Decimal" name="number1a"/>
+    <aura:attribute type="Decimal" name="number2b"/>
+
+    I AM Parent
+    <lightning:card title="Demo Calculator">
+        <lightning:input type="number" name="number1" placeholder="enter number1" value="{!v.number1a}"/><br/>
+        <lightning:input type="number" name="number2" placeholder="enter number2" value="{!v.number2b}"/><br/>
+        <lightning:button variant="brand" label="Add" title="Add" onclick="{!c.showMessage}"/>
+	</lightning:card>
+    
+    <aura:if isTrue="{!(v.resultMessage !=null)}">
+        {!v.resultMessage}
+        </aura:if>
+    
+    <c:AuramethodChild aura:id="childComponent"/>     //call child cmp here .
+ </aura:component>

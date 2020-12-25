@@ -1,0 +1,26 @@
+<apex:page controller="Calculatorcontr" >
+    <apex:form >
+    <apex:pageblock title="Calculator">
+        <apex:pageMessages id="show" ></apex:pageMessages>
+        Enter Number1: <apex:inputtext id="num1" value="{!num1}"/><br/><br/>
+         Enter Number2: <apex:inputtext id="num2" value="{!num2}"/><br/><br/>
+         Show Result  : <apex:outputText id="res" value="{!result}"/><br/><br/>
+        
+         operations :<apex:selectlist size="1" value="{!selected}" >
+        <apex:selectOption itemlabel="Select Operation"  itemValue="None"/>
+        <apex:selectOption itemlabel="Add"  itemValue="Add"/>
+         <apex:selectOption itemlabel="Subtract" itemValue="Sub"/>
+         <apex:selectOption itemlabel="multiplication" itemValue="multi"/>
+        <apex:selectOption itemlabel="division" itemValue="div"/>
+
+                <apex:actionSupport event="onchange" reRender="num1,num2,res" action="{!performOperation}" />
+
+        </apex:selectlist>
+        
+        
+        <apex:commandButton value="reset" reRender="num1,num2,res,show" action="{!reset}"/>
+
+        
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

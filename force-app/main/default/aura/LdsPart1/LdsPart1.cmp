@@ -1,0 +1,120 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+    
+    <aura:attribute name="recordId" type="String" default="0032E00002RzTpZQAV"/>
+    <aura:attribute name="contactRecordFields" type="Object"/>
+    <aura:attribute name="contactRecordLayout" type="Object"/>
+    <aura:attribute name="contactIds" type="List"/>
+    <aura:attribute name="recordError" type="String"/>
+    <!--<aura:handler name='init' value='{!this}' action='{!c.getContactIds}' /> -->
+    
+    <aura:attribute name="newContactRecordFields" type="Object"/>
+    <aura:attribute name="newContactRecordLayout" type="Object"/>
+     <aura:attribute name="newRecordError" type="String"/>
+
+    <force:recordData aura:id="recordLoader"
+                      recordId="{!v.recordId}"
+                      targetFields="{!v.contactRecordFields}"
+                      targetRecord="{!v.contactRecordLayout}"
+                      targetError="{!v.recordError}"                       
+                      layoutType="FULL"    
+                      mode="EDIT"
+                      recordUpdated="{!c.handleRecordUpdate}"
+                      />
+                    
+  
+
+    <force:recordData aura:id="recordCreator"                      
+                      targetFields="{!v.newContactRecordFields}"
+                      targetRecord="{!v.newContactRecordLayout}"
+                      targetError="{!v.newRecordError}"   
+                      layoutType="FULL"    
+                      mode="EDIT"
+                      />                            <!-- for New form we shouldnot write id so create another -->
+    
+    <lightning:button variant="brand" label="New" title="title" onclick="{!c.handleNew}"/>   
+    <lightning:button variant="brand" label="Delete" title="title" onclick="{!c.handleDelete}"/>  
+    
+    <lightning:card iconName="standard:contact" aura:id="ViewForm" title="{!v.contactRecordFields.Name}" >
+        <div class="slds-p-horizontal--small">
+            <p class="slds-text-heading--small" >
+                <lightning:formattedEmail title="Email" value="{!v.contactRecordFields.Email}" /></p>
+            <p class="slds-text-heading--small">
+                <lightning:formattedPhone title="Phone" value="{!v.contactRecordFields.Phone}" /></p>
+            <lightning:button variant="brand" label="Edit" title="title" onclick="{!c.handleEdit}"/>   
+        </div>
+    </lightning:card>
+    
+    
+    
+     <lightning:card aura:id="NewForm" iconName="standard:contact" title="{!v.newContactRecordFields.Name}" class="slds-hide" >
+    <lightning:layout multiplerows="true" verticalalign="center">
+            <lightning:layoutItem padding="around-small" size="12">
+                <lightning:input aura:id="newContactField"
+                                 name="firstName"
+                                 label="First Name"
+                                 value="{!v.newContactRecordFields.FirstName}"/>
+                <lightning:input aura:id="newContactField"
+                                 name="lastName"
+                                 label="Last Name"
+                                 value="{!v.newContactRecordFields.LastName}"
+                                 required="true"/>
+               <!-- <lightning:input aura:id="newContactField"
+                                 type="phone"
+                                 name="phone"
+                                 label="Phone Number"
+                                 patteren="\([0-9]{3}\) [0-9]{3}-[0-9]{4}"
+                                 messageWhenPatternMismatch="The phone number must contain 10 digits."
+                                 value="{!v.newContactRecordFields.Phone}"
+                                 required="true"/> -->
+                <lightning:input aura:id="newContactField"
+                                 type="email"
+                                 name="email"
+                                 label="Email"
+                                 value="{!v.newContactRecordFields.Email}"/>
+                <lightning:button variant="brand" label="Save" title="title" onclick="{!c.handleNewCreate}"/>
+                
+         </lightning:layoutItem>
+       </lightning:layout>    
+    </lightning:card>
+                
+    
+    
+    <lightning:card aura:id="EditForm" iconName="standard:contact" title="{!v.contactRecordFields.Name}" class="slds-hide" >
+        <div class="slds-p-horizontal--small">
+            <p class="slds-text-heading--small">
+                <lightning:input label="Email" value="{!v.contactRecordFields.Email}" /></p>
+            <p class="slds-text-heading--small">
+                <lightning:input label="Phone" value="{!v.contactRecordFields.Phone}" /></p>
+            
+            <lightning:button variant="brand" label="Save1" title="title" onclick="{!c.handleSave}"/>   
+        </div>
+    </lightning:card>
+    
+    <!-- Display Lightning Data Service errors, if any -->
+    <aura:if isTrue="{!not(empty(v.recordError))}">
+        <div class="recordError">
+            {!v.recordError}
+        </div>
+    </aura:if>
+    
+    <aura:if isTrue="{!not(empty(v.newRecordError))}">
+        <div class="newRecordError">
+            {!v.newRecordError}
+        </div>
+    </aura:if>
+    
+    
+    Data fields New: {!v.recordId}  
+    {!v.contactRecordFields.Name}  {!v.contactRecordFields.Phone}  {!v.contactRecordFields.Industry}
+    <br/>
+
+    Data Layout New: {!v.recordId}  {!v.contactRecordLayout.fields.Name.value} 
+    {!v.contactRecordLayout.fields.Phone.value} 
+    {!v.contactRecordLayout.fields.Industry.value}
+
+
+    
+    
+    <br/>
+    
+</aura:component>

@@ -1,0 +1,7 @@
+<apex:page controller="calculatorclasscont2">
+    <apex:form > Welcome to Calculator Page
+       
+
+        <apex:commandButton value="Go to calculator" action="{!redirect}"/>
+    </apex:form>
+</apex:page>

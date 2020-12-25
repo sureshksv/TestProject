@@ -1,0 +1,23 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" controller="ExampleActandContact" >
+    <!-- See also same comp of ExampleActandContact-->
+    <aura:attribute name="accts" type="List" />
+    <aura:attribute name="columns" type="List" />
+   
+    <aura:handler name="init" value="{!this}" action="{!c.handleInit}"/>
+    
+    <lightning:spinner aura:id="mySpinner" variant="brand" size="large" class="slds-hide"/> 
+    
+    <span onkeypress="{!c.handleKeyPress}">                    <!-- to put keypress we have to write span -->
+	<lightning:input name="actName" label="Enter a name of Account" aura:id="inputActName" /> 
+    </span>
+    <lightning:button variant="success" label="Get Record" title="record" onclick="{!c.getRecord}"/>
+
+    <lightning:datatable 
+                         keyField="id"
+                         data="{!v.accts}"
+                         columns="{!v.columns}"
+                         hideCheckboxColumn="true"
+                         onrowaction="{!c.handleRowAction}"
+                            onrowselection="{!c.handleSelected}"/>
+	
+</aura:component>

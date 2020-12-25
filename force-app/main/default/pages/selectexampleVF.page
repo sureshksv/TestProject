@@ -1,0 +1,11 @@
+<apex:page controller="SelectExample">
+    <apex:form >
+        <apex:selectlist size="1" value="{!selected}">
+            <apex:selectoption itemlabel="hyd" itemvalue="TG"/>
+            <apex:selectoption itemlabel="Ban" itemvalue="KA"/>
+            
+        </apex:selectlist>
+        <apex:Commandbutton value="submit" action="{!submit}"/>
+                                                  {!result}
+    </apex:form>
+</apex:page>

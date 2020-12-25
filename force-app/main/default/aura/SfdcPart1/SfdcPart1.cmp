@@ -1,0 +1,64 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" controller="SfdcPart1Apex" access="global">
+
+<!-- <aura:attribute name="recordId" type="Id" default="0012E00001qCce5QAC" /> -->
+<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+<aura:handler event="force:refreshView" action="{!c.doInit}" />
+<aura:attribute name="contacts" type="List" />
+
+
+<lightning:card title="Contacts">
+
+<div aura:id="ViewForm">
+    <lightning:layout  multipleRows="true">
+    <aura:iteration items="{!v.contacts}" var="con">   
+
+    <lightning:layoutItem size="12" smallDeviceSize="6" mediumDeviceSize="4" largeDeviceSize="3" padding="around-small">
+   
+    <lightning:recordViewForm recordId="{!con.Id}" objectApiName="Contact" >
+    <div class="slds-box slds-box_small">
+    <lightning:outputField fieldName="Id" />
+    <lightning:outputField fieldName="FirstName" />
+    <lightning:outputField fieldName="LastName" />
+    <lightning:outputField fieldName="Phone" />
+    </div>
+    </lightning:recordViewForm>   
+    </lightning:layoutItem>   .
+        
+    </aura:iteration>
+    </lightning:layout>
+</div>
+    
+    //recordeditform and recordviewform are buildin salesforce and also record data.  
+    
+<div aura:id="EditForm" class="Hide">
+    <lightning:layout  multipleRows="true">
+    <aura:iteration items="{!v.contacts}" var="con">   
+
+    <lightning:layoutItem size="12" smallDeviceSize="6" mediumDeviceSize="4" largeDeviceSize="3" padding="around-small">
+    
+    <lightning:recordEditForm aura:id='editForm' recordId="{!con.Id}" objectApiName="Contact" >
+    <div class="slds-box slds-box_small">
+    <lightning:outputField fieldName="Id" />
+    <lightning:inputField fieldName="FirstName" />
+    <lightning:inputField fieldName="LastName" />
+    <lightning:inputField fieldName="Phone" />
+    <!--<lightning:button class="slds-m-top_small" variant="brand" type="submit" name="update" label="Update" /> -->
+
+    </div>  
+</lightning:recordEditForm>   
+    </lightning:layoutItem>   
+    </aura:iteration>
+    </lightning:layout>
+</div>
+
+
+<aura:set attribute="actions">
+<lightning:button aura:id="btnNew" label="New" onclick="{!c.newRecord}"/>
+<lightning:button aura:id="btnEdit" label="Edit" onclick="{!c.editSaveRecord}"/>    <!-- edit btn label will change to Save label-->
+</aura:set>
+</lightning:card>
+
+
+
+
+</aura:component>

@@ -1,0 +1,50 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" controller="ExampleActandContact">
+    <aura:attribute name="loadedRecords" type="List"/>
+    <aura:attribute name="rawRecords" type="List"/>
+   
+    <aura:attribute name="columns" type="List" /> 
+    <aura:attribute name="activeFilter" type="string" default="All" description="The currently selected actions filter"/>
+   <!-- infinite loading attributes-->   
+     <aura:attribute name="noOfRecordsToAdd" type="Integer" default="20" />    
+    
+    <lightning:spinner aura:id="mySpinner" variant="brand" size="large" class="slds-hide"/> 
+     <aura:handler name="init" value	="{!this}" action="{!c.handleInit}" />
+    
+	<span onkeypress="{!c.handleKeyPress}">                    <!-- to put keypress we have to write span -->
+	<lightning:input name="actName" label="Enter a name of Account" aura:id="inputActName" /> 
+    </span>
+        <lightning:button variant="success" label="Get Record" title="record" onclick="{!c.getRecord}"/>
+    
+     <lightning:datatable
+                keyField="id"
+                data="{!v.loadedRecords}"
+                columns="{!v.columns}"
+                hideCheckboxColumn="false"
+                onrowaction="{! c.handleRowAction }"
+               	onheaderaction="{! c.handleHeaderAction }"
+                onrowselection="{!c.handleSelected}"
+                enableInfiniteLoading="false"
+                onloadmore="{! c.loadMoreData }"          />
+
+    </aura:component>
+    
+   <!-- Account: {!v.loadedRecords.length}<br/>
+    <aura:iteration items="{!v.loadedRecords}" var="act">
+         Name: {!act.Name}<br/>
+        Id: {!act.Id}<br/>
+        Type: {!act.Type}<br/>
+        Phone: {!act.Phone}<br/><br/>
+          
+        
+    </aura:iteration>-->
+
+
+
+<!-- here we have spinner,onkeypress(span),datatable-onrowaction which is used for show details,delete,edit in datatable dropdown-->
+<!-- {label: 'Account Name', fieldName: 'linkName', type: 'url', 
+             typeAttributes: {label: { fieldName: 'Name' }, target: '_blank'} is used for url on fields-->
+<!--   var actions=helper.getRowActions.bind(this, component);
+        is used on row level dynamic actions for this we use bind-->
+<!-- type: 'action', typeAttributes: { rowActions: actions } is written in data table for row actions-->
+<!-- In Apex controller we have wriiten DELETE soql statement here-->
+<!-- onkeypress is written because we not only press button but also when we press ENTER it will show the details-->

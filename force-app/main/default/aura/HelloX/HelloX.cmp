@@ -1,0 +1,22 @@
+<aura:component implements="force:appHostable">
+    
+   
+    <aura:attribute name="userInputValue" type="String" default="there"/>
+    
+	<lightning:input aura:id="userInput" name="userInputname" label="Enter some text here" placeholder="Enter something!" 
+                     value=""/>
+    <lightning:button variant="brand" label="Click me!" title="Click me!" onclick="{! c.handleClick }" />
+    
+    Hello , {!v.userInputValue}     <!-- to show the value-->
+    
+</aura:component>
+
+ <!-- this accepts some string input from user and displays on it after Hello -->
+    <!-- force:appHostable is used for tab in the page  -->
+    <!-- to show on UI and not on browser we have to create attribute to store this value ,
+          and attribute is like declaring a variable and datatype in class-->
+    <!-- default is used for to show on ui if no value is specifythen it shows this text 'there' -->   
+
+ <!-- aura:id is similar to like having a id in html and identify them--> 
+  <!--  lighiting:input and button is searched in lightening components library,   -->
+  <!--attribute,set and get should start with v. and for methods it should start with c. -->
