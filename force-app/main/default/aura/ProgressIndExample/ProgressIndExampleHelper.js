@@ -19,7 +19,7 @@
               steps.push(obj);                                          //push into the blank array of steps above like add()
           })
           console.log("StepValues JS="+JSON.stringify(steps));
-           component.set("stepsNew", steps);                               //setting the steps to attribut stepsNew
+           component.set("v.stepsNew", steps);                               //setting the steps to attribut stepsNew
       }	
           });
         
