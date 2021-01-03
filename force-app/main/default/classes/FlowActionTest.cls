@@ -3,10 +3,11 @@ public with sharing class FlowActionTest {
 
     }
     @InvocableMethod
-    public static List<Account> getActs(String srch)
+    public static List<Account> getActs(List<String> srch)
     {
-        List<Account> result = [select Id,Name from Account where name like : srch];
-        System.debug('Result of search for '+srch+' is '+ result);
+        String srchParam =srch[0]; 
+        List<Account> result = [select Id,Name from Account where name like : srchParam];
+        System.debug('Result of search for '+srchParam+' is '+ result);
         return result;
     }
 
